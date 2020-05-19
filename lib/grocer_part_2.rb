@@ -5,7 +5,7 @@ def apply_coupons(cart, coupons)
   if coupons.length > 0
     coupons.each do |coupon|
       cart.each do |item|
-        if item[:item] == coupon[:item] && item[:count] > coupon[:num]
+        if item[:item] == coupon[:item] && item[:count] >= coupon[:num]
           item[:count] = (item[:count] - coupon[:num])
             
         clearance_state = item[:clearance]
